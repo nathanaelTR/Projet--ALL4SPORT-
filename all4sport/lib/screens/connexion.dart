@@ -5,7 +5,7 @@ class ConnectScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Connexion'),
+        title: const Text('Se connecter'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
