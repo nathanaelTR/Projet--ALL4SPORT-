@@ -1,5 +1,7 @@
 {
-"produits": [
+  "type" : "Produit",
+  "version" : "v1.0.0",
+  "produits": [
     {
       "produit_id": 101,
       "designation": "Produit A",
@@ -16,12 +18,4 @@
       "quantite": 20
     }
   ]
-
-
-
-
-
-
-
-
 }
