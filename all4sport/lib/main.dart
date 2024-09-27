@@ -1,4 +1,4 @@
-import 'package:all4sport/screens/Accueil.dart';
+import 'package:all4sport/screens/connexion.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +10,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Accueil();
+    return MaterialApp(home: ConnectScreen());
   }
 }

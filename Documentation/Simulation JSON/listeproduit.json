@@ -1,0 +1,27 @@
+{
+"produits": [
+    {
+      "produit_id": 101,
+      "designation": "Produit A",
+      "quantite": 50
+    },
+    {
+      "produit_id": 102,
+      "designation": "Produit B",
+      "quantite": 30
+    },
+    {
+      "produit_id": 103,
+      "designation": "Produit C",
+      "quantite": 20
+    }
+  ]
+
+
+
+
+
+
+
+
+}
