@@ -1,17 +1,17 @@
 {
 "produits": [
     {
-      "produit_id": 101,
+      "produit_id": 1,
       "designation": "Produit A",
       "quantite": 50
     },
     {
-      "produit_id": 102,
+      "produit_id": 2,
       "designation": "Produit B",
       "quantite": 30
     },
     {
-      "produit_id": 103,
+      "produit_id": 3,
       "designation": "Produit C",
       "quantite": 20
     }
