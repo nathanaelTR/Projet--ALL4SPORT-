@@ -32,6 +32,12 @@
      "ref_produit": 6,
      "nom_de_produit": "Nike Pegasus Trail 3",
      "quantite": 80
+    },
+
+    {
+      "ref_produit": 7,
+      "nom_de_produit": "Nike Air Max 90",
+      "quantite": 100
     }
 
   ]
