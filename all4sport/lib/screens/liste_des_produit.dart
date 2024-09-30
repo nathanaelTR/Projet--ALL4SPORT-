@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle; // Pour charger les fichiers JSON
+import 'package:flutter/services.dart'
+    show rootBundle; // Pour charger les fichiers JSON
 
 class ListeProduit extends StatefulWidget {
   const ListeProduit({super.key});
@@ -16,7 +17,8 @@ class _ListeProduitState extends State<ListeProduit> {
   Future<void> loadJsonData() async {
     try {
       // Charger le fichier JSON
-      String jsonString = await rootBundle.loadString('assets/json/listeproduit.json');
+      String jsonString =
+          await rootBundle.loadString('assets/json/listeproduit.json');
       // Décoder le JSON et stocker la liste de produits
       setState(() {
         jsonProduit = jsonDecode(jsonString)['produits'];
@@ -33,7 +35,7 @@ class _ListeProduitState extends State<ListeProduit> {
     loadJsonData();
   }
 
-  // Vue de Carte de Produit 
+  // Vue de Carte de Produit
   Widget produitCard(String title, String subtitle) {
     return Card(
       child: ListTile(
@@ -54,17 +56,20 @@ class _ListeProduitState extends State<ListeProduit> {
         backgroundColor: const Color.fromARGB(255, 18, 18, 18),
       ),
       // Affiche un indicateur de chargement tant que les données ne sont pas disponibles
-      body: jsonProduit.isEmpty ? const Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              itemCount: jsonProduit.length,
-              itemBuilder: (context, index) {
-                var produit = jsonProduit[index];
-                return produitCard(
-                  'ref: ${produit['ref_produit']}', // Affiche le nom du produit
-                  produit["nom_du_produit"], // Affiche la quantité
-                );
-              },
-            ),
+      body: Column(children: [
+        jsonProduit.isEmpty
+            ? const Center(child: CircularProgressIndicator())
+            : ListView.builder(
+                itemCount: jsonProduit.length,
+                itemBuilder: (context, index) {
+                  var produit = jsonProduit[index];
+                  return produitCard(
+                    'ref: ${produit['ref_produit']}', // Affiche le nom du produit
+                    produit["nom_du_produit"], // Affiche la quantité
+                  );
+                },
+              ),
+      ]),
     );
   }
 }
