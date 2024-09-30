@@ -1,3 +1,4 @@
+import 'package:all4sport/screens/liste_des_produit.dart';
 import 'package:flutter/material.dart';
 
 class Accueil extends StatelessWidget {
@@ -21,12 +22,12 @@ class Accueil extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Drawer Header'),
+              child: Text('Menu'),
             ),
             ListTile(
               title: const Text('Liste des Produits'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => const ListeProduit()));
               },
             ),
             ListTile(

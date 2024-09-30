@@ -1,5 +1,7 @@
 {
-"produits": [
+  "type" : "Produit",
+  "version" : "v1.0.0",
+  "produits": [
     {
       "ref_produit": 1,
       "nom_de_produit": "Nike Mercurial Vapor 16 Pro",
@@ -41,12 +43,4 @@
     }
 
   ]
-
-
-
-
-
-
-
-
 }
