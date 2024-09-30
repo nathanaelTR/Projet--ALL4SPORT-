@@ -1,22 +1,46 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+class ListeProduit extends StatefulWidget {
+  const ListeProduit({super.key});
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<ListeProduit> createState() => _ListeProduitState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _ListeProduitState extends State<ListeProduit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "All4Sport",
+          "All4Sport - Liste Produit",
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: const Color.fromARGB(255, 18, 18, 18),
+      ),
+      body: const Column(
+        children: [
+          Card(
+            child: ListTile(
+              title: Text("Produit 1"),
+              subtitle: Text("Test"),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text("Produit 2"),
+              subtitle: Text("Test"),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text("Produit 3"),
+              subtitle: Text("Test"),
+            ),
+          ),
+        ],
       ),
     );
   }
