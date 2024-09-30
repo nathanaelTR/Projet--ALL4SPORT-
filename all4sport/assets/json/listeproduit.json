@@ -1,0 +1,46 @@
+{
+  "type" : "Produit",
+  "version" : "v1.0.0",
+  "produits": [
+    {
+      "ref_produit": 1,
+      "nom_de_produit": "Nike Mercurial Vapor 16 Pro",
+      "quantite": 50
+    },
+    {
+      "ref_produit": 2,
+      "nom_de_produit": "Adidas Predator Freak.1",
+      "quantite": 30
+    },
+    {
+      "ref_produit": 3,
+      "nom_de_produit": "Puma Future Z 1.1",
+      "quantite": 20
+    },
+
+    {
+      "ref_produit": 4,
+      "nom_de_produit": "Premier League Academy Ballon de foot",
+      "quantite":10
+    },
+
+    {
+      "ref_produit": 5,
+      "nom_de_produit": "Pantalon de jogging Nike Sportswear Club Fleece",
+      "quantite": 40
+    },
+
+    {
+     "ref_produit": 6,
+     "nom_de_produit": "Nike Pegasus Trail 3",
+     "quantite": 80
+    },
+
+    {
+      "ref_produit": 7,
+      "nom_de_produit": "Nike Air Max 90",
+      "quantite": 100
+    }
+
+  ]
+}

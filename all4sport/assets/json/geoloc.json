@@ -1,0 +1,16 @@
+{
+    "localisation": [
+        {
+            "nom_ville": "Paris",
+            "estConnecte": true
+        },
+        {
+            "nom_ville": "Lyon",
+            "estConnecte": false
+        },
+        {
+            "nom_ville": "Marseille",
+            "estConnecte": true
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+  "arrivages": [
+    {
+      "id": 1,
+      "date": "2023-10-01",
+      "type": "Arrivage des Produit",
+      "produits": [
+        {
+          "produit_id": 101,
+          "nom": "Produit A",
+          "quantite": 50,
+          "fournisseur": "Fournisseur X"
+        },
+        {
+          "produit_id": 102,
+          "nom": "Produit B",
+          "quantite": 30,
+          "fournisseur": "Fournisseur Y"
+        }
+      ],
+      "cariste": {
+        "id": 201,
+        "nom": "Cariste 1"
+      }
+    },
+    {
+      "id": 2,
+      "date": "2023-10-02",
+      "produits": [
+        {
+          "produit_id": 103,
+          "nom": "Produit C",
+          "quantite": 20,
+          "fournisseur": "Fournisseur Z"
+        }
+      ],
+      "cariste": {
+        "id": 202,
+        "nom": "Cariste 2"
+      }
+    }
+  ]
+}
