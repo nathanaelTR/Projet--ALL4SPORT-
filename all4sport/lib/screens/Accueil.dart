@@ -1,6 +1,8 @@
 import 'package:all4sport/screens/liste_des_produit.dart';
 import 'package:flutter/material.dart';
 import 'package:all4sport/screens/connexion.dart'; // Import de la page de connexion
+import 'package:all4sport/screens/arrivage.dart'; // Import de la page d'arrivage
+
 
 class Accueil extends StatelessWidget {
   const Accueil({super.key});
@@ -42,14 +44,20 @@ class Accueil extends StatelessWidget {
               title: const Text('Liste des Produits'),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                        const ListeProduit()));
+                    builder: (BuildContext context) => const ListeProduit()));
               },
             ),
             ListTile(
               title: const Text('Panier'),
               onTap: () {
                 Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Arrivage'),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const ArrivageScreen()));
               },
             ),
           ],
