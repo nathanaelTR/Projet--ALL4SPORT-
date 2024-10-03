@@ -1,8 +1,7 @@
 import 'package:all4sport/screens/arrivage.dart';
 import 'package:all4sport/screens/liste_des_produit.dart';
 import 'package:flutter/material.dart';
-import 'package:all4sport/screens/connexion.dart'; // Import de la page de connexion
-import 'package:all4sport/screens/arrivage.dart'; // Import de la page d'arrivage
+import 'package:all4sport/screens/connexion.dart'; // Import de la page de connexion// Import de la page d'arrivage
 
 
 class Accueil extends StatelessWidget {
