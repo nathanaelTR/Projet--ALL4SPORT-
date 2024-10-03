@@ -1,6 +1,9 @@
 import 'package:all4sport/screens/arrivage.dart';
 import 'package:all4sport/screens/liste_des_produit.dart';
 import 'package:flutter/material.dart';
+import 'package:all4sport/screens/connexion.dart'; // Import de la page de connexion
+import 'package:all4sport/screens/arrivage.dart'; // Import de la page d'arrivage
+
 
 class Accueil extends StatelessWidget {
   const Accueil({super.key});
@@ -14,6 +17,19 @@ class Accueil extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: const Color.fromARGB(255, 18, 18, 18),
+        // Ajout du bouton retour à droite dans la AppBar
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.arrow_forward), // Utiliser une flèche vers l'avant pour l'indication
+            onPressed: () {
+              // Retour à la page de connexion
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const ConnectScreen()),
+              );
+            },
+          ),
+        ],
       ),
       // Création d'un menu Glissant
       drawer: Drawer(
@@ -30,7 +46,8 @@ class Accueil extends StatelessWidget {
             ListTile(
               title: const Text('Liste des Produits'),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => const ListeProduit()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const ListeProduit()));
               },
             ),
             // Ajout d'un element dans la liste
@@ -38,6 +55,13 @@ class Accueil extends StatelessWidget {
               title: const Text('Arrivage'),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => const ArrivageScreen()));
+              },
+            ),
+            ListTile(
+              title: const Text('Arrivage'),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const ArrivageScreen()));
               },
             ),
           ],
