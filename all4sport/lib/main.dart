@@ -1,6 +1,5 @@
 
 import 'package:all4sport/screens/accueil.dart';
-import 'package:all4sport/screens/arrivage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,3 +18,4 @@ class MainApp extends StatelessWidget {
     
   }
 }
+
