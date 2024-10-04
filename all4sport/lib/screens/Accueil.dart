@@ -15,20 +15,6 @@ class Accueil extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: const Color.fromARGB(255, 18, 18, 18),
-        // Ajout du bouton retour à droite dans la AppBar
-        actions: [
-          IconButton(
-            icon: const Icon(Icons
-                .arrow_forward), // Utiliser une flèche vers l'avant pour l'indication
-            onPressed: () {
-              // Retour à la page de connexion
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const ConnectScreen()),
-              );
-            },
-          ),
-        ],
       ),
       // Création d'un menu Glissant
       drawer: Drawer(
