@@ -7,10 +7,13 @@ class ArrivageScreen extends StatefulWidget {
 }
 
 class _ArrivageScreenState extends State<ArrivageScreen> {
+  static const IconData qr_code_2 = IconData(0xe4f6, fontFamily: 'MaterialIcons');
   final _formKey = GlobalKey<FormState>();
   String _productReference = '';
   String _warehouse = '';
   int _quantity = 0;
+  int index = 0;
+  final List<String> customizations = ['Customization1', 'Customization2']; // Example list
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +79,16 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
                   }
                 },
                 child: const Text('Ajouter le nouveau produit'),
+              ),
+              Center(
+                child: FloatingActionButton(
+                  onPressed: () {
+                    setState(() {
+                      index = (index + 1) % customizations.length;
+                    });
+                  },
+                  child: const Icon(Icons.qr_code_2),
+                ),
               ),
             ],
           ),

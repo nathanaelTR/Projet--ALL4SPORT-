@@ -1,29 +1,29 @@
 {
     "localData": {
-        "lastSync": "2023-10-01T12:00:00Z",
+        "lastSync": "2023-10-01",
         "items": [
             {
-                "id": "item1",
+                "id": "1",
                 "name": "Produit A",
                 "quantity": 100
             },
             {
-                "id": "item2",
+                "id": "2",
                 "name": "Produit B",
                 "quantity": 50
             }
         ]
     },
     "centralData": {
-        "lastSync": "2023-10-01T12:00:00Z",
+        "lastSync": "2023-10-01",
         "items": [
             {
-                "id": "item1",
+                "id": "3",
                 "name": "Produit A",
                 "quantity": 100
             },
             {
-                "id": "item2",
+                "id": "4",
                 "name": "Produit B",
                 "quantity": 50
             }
