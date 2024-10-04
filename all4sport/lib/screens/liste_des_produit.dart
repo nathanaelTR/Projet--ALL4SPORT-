@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'
-    show rootBundle; // Pour charger les fichiers JSON
+import 'package:flutter/services.dart' show rootBundle; // Pour charger les fichiers JSON
 
 class ListeProduit extends StatefulWidget {
   const ListeProduit({super.key});
@@ -55,21 +54,19 @@ class _ListeProduitState extends State<ListeProduit> {
         ),
         backgroundColor: const Color.fromARGB(255, 18, 18, 18),
       ),
-      // Affiche un indicateur de chargement tant que les données ne sont pas disponibles
-      body: Column(children: [
-        jsonProduit.isEmpty
-            ? const Center(child: CircularProgressIndicator())
-            : ListView.builder(
-                itemCount: jsonProduit.length,
-                itemBuilder: (context, index) {
-                  var produit = jsonProduit[index];
-                  return produitCard(
-                    'ref: ${produit['ref_produit']}', // Affiche le nom du produit
-                    produit["nom_du_produit"], // Affiche la quantité
-                  );
-                },
-              ),
-      ]),
+      // Utilisation de ListView pour éviter des problèmes d'affichage
+      body: jsonProduit.isEmpty
+          ? const Center(child: CircularProgressIndicator())
+          : ListView.builder(
+              itemCount: jsonProduit.length,
+              itemBuilder: (context, index) {
+                var produit = jsonProduit[index];
+                return produitCard(
+                  'Ref: ${produit['ref_produit']}', // Affiche la référence du produit
+                  'Nom: ${produit["nom_de_produit"]} | Qt: ${produit["quantite"]}', // Affiche le nom du produit
+                );
+              },
+            ),
     );
   }
 }

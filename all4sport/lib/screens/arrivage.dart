@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ArrivageScreen extends StatefulWidget {
-  const ArrivageScreen({Key? key}) : super(key: key);
+  const ArrivageScreen({super.key});
   @override
   _ArrivageScreenState createState() => _ArrivageScreenState();
 }
