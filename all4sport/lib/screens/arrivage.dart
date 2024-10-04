@@ -80,20 +80,18 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
                 },
                 child: const Text('Ajouter le nouveau produit'),
               ),
-              Center(
-                child: FloatingActionButton(
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton:  FloatingActionButton(
                   onPressed: () {
                     setState(() {
                       index = (index + 1) % customizations.length;
                     });
                   },
                   child: const Icon(Icons.qr_code_2),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+                ), 
     );
   }
 }
