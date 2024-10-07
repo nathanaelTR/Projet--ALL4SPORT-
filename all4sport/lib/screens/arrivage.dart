@@ -41,6 +41,7 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
                   if (value == null || value.isEmpty) {
                     return 'Veuillez entrer la référence du produit';
                   } else {}
+                  return null;
                 },
               ),
               TextFormField(
@@ -52,6 +53,7 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
                   if (value == null || value.isEmpty) {
                     return 'Veuillez entrer l\'entrepôt';
                   } else {}
+                  return null;
                 },
               ),
               TextFormField(
@@ -67,6 +69,7 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
                   if (int.tryParse(value) == null) {
                     return 'Veuillez entrer un nombre valide';
                   } else {}
+                  return null;
                 },
               ),
               const SizedBox(height: 20),
