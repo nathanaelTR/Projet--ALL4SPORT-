@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:all4sport/screens/accueil.dart'; // Import de la page Accueil
+import 'dart:convert'; 
+import 'package:flutter/services.dart'; 
+import 'package:all4sport/screens/accueil.dart'; 
 
 class ConnectScreen extends StatefulWidget {
   const ConnectScreen({super.key});
@@ -12,11 +14,30 @@ class _ConnectScreenState extends State<ConnectScreen> {
   final TextEditingController _loginController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  // Identifiants en dur (login et mot de passe)
-  final String correctLogin = 'admin';
-  final String correctPassword = 'password123';
-
   String errorMessage = '';
+
+  // Fonction pour lire et vérifier les identifiants à partir du fichier JSON
+  Future<bool> _validateCredentials(String login, String password) async {
+    // Charger le fichier JSON
+    String jsonData = await rootBundle.loadString('assets/json/login.json');
+    Map<String, dynamic> data = json.decode(jsonData);
+
+    // Parcourir les comptes pour trouver une correspondance
+    for (var account in data['compte']) {
+      if (account['login'] == login && account['password'] == password) {
+        // Vérifier si l'utilisateur a le rôle de "carriste"
+        if (account['role'] == 'carriste') {
+          return true; // Identifiants valides et rôle correct
+        } else {
+          setState(() {
+            errorMessage = 'Seuls les carristes peuvent se connecter.';
+          });
+          return false; // Rôle incorrect
+        }
+      }
+    }
+    return false; // Identifiants incorrects
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,19 +61,23 @@ class _ConnectScreenState extends State<ConnectScreen> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {
-                // Vérifier les identifiants
-                if (_loginController.text == correctLogin &&
-                    _passwordController.text == correctPassword) {
-                  // Rediriger vers la page d'accueil si les identifiants sont corrects
+              onPressed: () async {
+                // Vérification des identifiants avec le fichier JSON
+                bool isValid = await _validateCredentials(
+                  _loginController.text,
+                  _passwordController.text,
+                );
+
+                if (isValid) {
+                  // Rediriger vers la page d'accueil si les identifiants et le rôle sont corrects
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => const Accueil()),
                   );
                 } else {
-                  // Afficher un message d'erreur si les identifiants sont incorrects
+                  // Afficher un message d'erreur si les identifiants sont incorrects ou si le rôle ne correspond pas
                   setState(() {
-                    errorMessage = 'Login ou mot de passe incorrect';
+                    errorMessage = 'Login, mot de passe ou rôle incorrect';
                   });
                 }
               },

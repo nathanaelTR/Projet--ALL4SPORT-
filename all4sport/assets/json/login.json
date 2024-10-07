@@ -9,10 +9,24 @@
     }, {
         "id": 2,
         "login": "julia@all4sport.com",
-        "password": "julia@_2024"
+        "password": "julia@_2024",
+        "role" : "comptable"
     }, {
         "id": 3,
         "login": "nick@all4sport.com",
-        "password": "nick@_2024"
+        "password": "nick@_2024",
+        "role": "informaticien"
+
+    }, {
+        "id": 4,
+        "login": "bernard@all4sport.com",
+        "password": "bernard@_2024",
+        "role": "carriste"        
+    
+        
     }]
 }
+
+
+
+
