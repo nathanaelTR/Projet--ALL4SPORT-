@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle; // Pour charger les fichiers JSON
+import 'package:flutter/services.dart'
+    show rootBundle; // Pour charger les fichiers JSON
 
 class ListeProduit extends StatefulWidget {
   const ListeProduit({super.key});
@@ -62,11 +63,12 @@ class _ListeProduitState extends State<ListeProduit> {
               itemBuilder: (context, index) {
                 var produit = jsonProduit[index];
                 return produitCard(
-                  'Ref: ${produit['ref_produit']}', // Affiche la référence du produit
-                  'Nom: ${produit["nom_de_produit"]} | Qt: ${produit["quantite"]}', // Affiche le nom du produit
+                  '${produit["nom_de_produit"]} ', // Affiche la référence du produit
+                  'Ref: ${produit['ref_produit']}\nQuantité: ${produit["quantite"]}', // Affiche le nom du produit
                 );
               },
             ),
+          
     );
   }
 }
