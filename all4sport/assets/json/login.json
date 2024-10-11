@@ -1,0 +1,32 @@
+{
+    "version": "1.0.0",
+    "type": "connexion",
+    "compte": [{
+        "id": 1,
+        "login": "pierre@all4sport.com",
+        "password": "pierre@_2024",
+        "role": "carriste"
+    }, {
+        "id": 2,
+        "login": "julia@all4sport.com",
+        "password": "julia@_2024",
+        "role" : "comptable"
+    }, {
+        "id": 3,
+        "login": "nick@all4sport.com",
+        "password": "nick@_2024",
+        "role": "informaticien"
+
+    }, {
+        "id": 4,
+        "login": "bernard@all4sport.com",
+        "password": "bernard@_2024",
+        "role": "carriste"        
+    
+        
+    }]
+}
+
+
+
+

@@ -1,0 +1,27 @@
+{
+    "produits": [
+        {
+            "id": "1",
+            "name": "Nike Mercurial Vapor 16 Pro",
+            "qr_code": "QR_CODE_1"
+        },
+
+        {
+           "id": "2",
+           "name": "Adidas Predator Freak.1",
+           "qr_code": "QR_CODE_2"
+
+        }
+       
+    ]
+
+
+
+
+
+
+
+
+
+
+}

@@ -22,7 +22,6 @@ Tout les données possible pour l'aide de la conception de la base de donnée se
 - Date de Dernier Achat  
 
 ## Connexion CARISTE  
- 
 - adresse email 
 - mot de passe 
 
