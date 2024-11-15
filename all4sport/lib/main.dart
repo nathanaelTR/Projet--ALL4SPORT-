@@ -15,28 +15,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Bienvenue sur le scanner de QR code'),
-            ElevatedButton(
-              child: const Text('Clique pour scanner un QRcode'),
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => QrCodeScanner(),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
