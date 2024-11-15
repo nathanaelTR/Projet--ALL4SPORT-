@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:all4sport/qrcode/qrcode.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -58,7 +59,7 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
       return;
     }
 
-    final LocationSettings locationSettings = const LocationSettings(
+    final LocationSettings locationSettings = LocationSettings(
       accuracy: LocationAccuracy.high,
     );
 
@@ -204,7 +205,16 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
                   'Données du produit : $_productInfo',
                   style: const TextStyle(fontSize: 16, color: Colors.blue),
                 ),
-              ]
+              ],
+              ElevatedButton(
+                  onPressed: () => {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    QRCodeScannerScreen()))
+                      },
+                  child: Icon(Icons.qr_code)),
             ],
           ),
         ),
