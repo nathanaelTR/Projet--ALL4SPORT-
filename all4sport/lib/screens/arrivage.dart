@@ -18,6 +18,7 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
   bool isWarehouseDetected = false;
   bool isLocationFailed = false;
 
+  String? _productInfo;
   final TextEditingController _warehouseController = TextEditingController();
 
   final List<Map<String, dynamic>> warehouses = [
@@ -106,9 +107,12 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
       isLocationFailed = true;
     });
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text(
-            'Géolocalisation échouée ou lieu non détecté. Veuillez entrer manuellement l\'entrepôt.'),
+      SnackBar(
+        content: const Text(
+            'Géolocalisation échouée ou lieu non détecté. Veuillez entrer manuellement l\'entrepôt.',
+            style: TextStyle(fontSize: 25)),
+        duration: const Duration(days: 1),
+        action: SnackBarAction(label: "X", onPressed: () {}),
       ),
     );
   }
@@ -146,7 +150,7 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
               ),
               TextFormField(
                 decoration: const InputDecoration(labelText: 'Entrepôt'),
-                controller: _warehouseController, // Utilisez le contrôleur
+                controller: _warehouseController,
                 onSaved: (value) {
                   _warehouse = value!;
                 },
@@ -185,12 +189,22 @@ class _ArrivageScreenState extends State<ArrivageScreen> {
                       'entrepot': _warehouse,
                       'quantité': _quantity,
                     };
+                    setState(() {
+                      _productInfo = jsonEncode(productData);
+                    });
                     print(jsonEncode(productData));
                   }
                 },
                 child: const Text('Ajouter le nouveau produit'),
               ),
               if (isLoading) const CircularProgressIndicator(),
+              if (_productInfo != null) ...[
+                const SizedBox(height: 20),
+                Text(
+                  'Données du produit : $_productInfo',
+                  style: const TextStyle(fontSize: 16, color: Colors.blue),
+                ),
+              ]
             ],
           ),
         ),

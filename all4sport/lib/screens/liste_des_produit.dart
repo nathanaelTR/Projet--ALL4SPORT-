@@ -49,6 +49,7 @@ class _ListeProduitState extends State<ListeProduit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
         title: const Text(
           "All4Sport - Liste Produit",
           style: TextStyle(color: Colors.white),
@@ -68,7 +69,6 @@ class _ListeProduitState extends State<ListeProduit> {
                 );
               },
             ),
-          
     );
   }
 }

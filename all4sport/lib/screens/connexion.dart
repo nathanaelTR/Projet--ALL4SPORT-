@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:convert'; 
-import 'package:flutter/services.dart'; 
-import 'package:all4sport/screens/accueil.dart'; 
+import 'dart:convert';
+import 'package:flutter/services.dart';
+import 'package:all4sport/screens/accueil.dart';
 
 class ConnectScreen extends StatefulWidget {
   const ConnectScreen({super.key});
@@ -25,18 +25,18 @@ class _ConnectScreenState extends State<ConnectScreen> {
     // Parcourir les comptes pour trouver une correspondance
     for (var account in data['compte']) {
       if (account['login'] == login && account['password'] == password) {
-        // Vérifier si l'utilisateur a le rôle de "carriste"
+        // Vérifier si l'utilisateur a le rôle de "carriste" et non de comptable
         if (account['role'] == 'carriste') {
           return true; // Identifiants valides et rôle correct
         } else {
           setState(() {
             errorMessage = 'Seuls les carristes peuvent se connecter.';
           });
-          return false; // Rôle incorrect
+          return false; // Si le Rôle est incorrect
         }
       }
     }
-    return false; // Identifiants incorrects
+    return false; // Si Identifiants est incorrects
   }
 
   @override
